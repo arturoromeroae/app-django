@@ -18,11 +18,11 @@ If your project is already in an existing python3 virtualenv first install djang
     $ pip install django
     
 And then run the `django-admin.py` command to start the new project:
-    ```
+```
     $ django-admin.py startproject \
-      --extension=py,md \
-      <project_name>
-    ```
+    --extension=py,md \
+    <project_name>
+```
       
 ### No virtualenv
 This assumes that `python3` is linked to valid installation of python 3 and that `pip` is installed and `pip3`is valid
