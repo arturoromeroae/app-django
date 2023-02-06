@@ -30,7 +30,7 @@ for installing python 3 packages.
 Installing inside virtualenv is recommended, however you can start your project without virtualenv too.
 If you don't have django installed for python 3 then run:
 ```
-$ pip3 install django
+    $ pip install django
 ```
     
 And then:
