@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="display-3 text-center">Tareas</h1>
+<div class="container d-flex flex-wrap">
+    {% for task in tasks %}
+    {% if task.important %}
+    <div class="card text-bg-primary m-2 text-center" style="max-width: 18rem;">
+    {% else %}
+    <div class="card border-primary m-2 text-center" style="max-width: 18rem;">
+    {% endif %}
+        <div class="card-header">Creada por {{ task.user }} el {{ task.created|date:'j M Y' }}</div>
+        <div class="card-body">
+            <h5 class="card-title">{{ task.title }}</h5>
+            {% if task.important %}
+            <p class="card-text"><strong>Tarea Importante</strong></p>
+            <a href="{% url 'task_detail' task.id %}" class="btn btn-outline-light">Ver tarea</a>
+            {% else %}
+            <p class="card-text">Tarea de baja prioridad</p>
+            <a href="{% url 'task_detail' task.id %}" class="btn btn-primary">Ver tarea</a>
+            {% endif %}
+        </div>
+        {% if task.datecompleted %}
+        <div class="card-footer bg-transparent">Tarea Completada el {{ task.datecompleted|date:'M j Y' }}</div>
+        {% else %}
+        <div class="card-footer bg-transparent">Aún no se completa</div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

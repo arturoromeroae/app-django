@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="card p-5">
+        <h1 class="display-1 text-center">Inicio</h1>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor itaque voluptates ab! Ducimus neque a
+            incidunt ad quos consectetur illum, quia ipsa distinctio porro nesciunt obcaecati iusto? Eveniet ab
+            voluptatibus, corrupti deleniti provident dicta laborum possimus quae illum mollitia recusandae eaque.
+            Laboriosam minus quam, repellat officia voluptatem at unde eveniet doloribus amet ex, minima, fugit earum
+            veniam quisquam dignissimos! Vel illo nobis vero pariatur culpa voluptas soluta fugit modi, tempore
+            temporibus aut aspernatur magnam expedita ut itaque quaerat maxime! Vitae reiciendis facilis a minima
+            distinctio recusandae quaerat provident consequuntur delectus non quod saepe adipisci qui, modi accusamus,
+            porro enim tempore?
+        </p>
+        {% if user.is_anonymous %}
+        <div class="d-grid gap-2 col-2 mx-auto">
+            <a class="btn btn-dark" href="/login/">Inicio de sesion</a>
+            <a class="btn btn-secondary" href="/signup/">Registro</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
